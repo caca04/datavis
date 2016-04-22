@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+        <title> Chart - 1 </title> 
+        <!-- Inclusões das bibliotecas JavaScript para o Highcharts
+ --> 
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> 
+        <script src="http://code.highcharts.com/highcharts.js"></script>     
+    </head> 
+    <body> 
+    	<div id="container" style="width:100%; height:400px;"></div>
+    	
+    	    	<script>
+    		$(function (){
+    			$('#container').highcharts({
+    				chart:{
+    					type: 'scatter'
+    				},
+    				title:{
+    					text: 'Oscar/Budget'
+    				},
+    				xAxis:{
+    					categories:['Beginners','Black Swan','Inglorious Bastards','Juno','Michael Clayton','Midnight in Paris','Milk','No Country for Old Men','Ratatouille','The Dark Knight','Up','Wall-E','The Help']
+    				},
+    				yAxis: {
+                        title: {
+                            text: 'Budget'
+                        }
+                    },
+                    series:[{
+			showInLegend: false,  
+                    	data: [{y:3.2,color:'red'},
+				{y:13,color:'brown'},
+				{y:70,color:'blue'},
+				{y:7.5,color:'red'},
+				{y:25,color:'gray'},
+				{y:17,color:'pink'},
+				{y:20,color:'green'},
+				{y:25,color:'brown'},
+				{y:150,color:'orange'},
+				{y:185,color:'gray'},
+				{y:175,color:'orange'},
+				{y:180,color:'orange'},
+				{y:25,color:'brown'}]
+                         	}]                    	
+    			});
+    		});
+    	</script>
+
+	<div id="text"> 
+		<h2>Visualização 1:</h2>
+		<p>Esse gráfico tenta representar alguns filmes ganhadores do Oscar e seu respectivos orçamentos. Ele é parecido com o gráfico feito para pergunta 1 do tableau, com alguns filmes a menos.</p>
+		<h2>Dificuldades:</h2>	
+		<p>Primeira dificuldade foi que, pelo arquivo csv ser bastante grande, o highcharts não estava conseguindo dar load. Por conta disso, pelo grafico não ter desmasias informação, escrevi as series dentro do arquivo html.</p>
+		<p>Outra dificuldade que eu tive foi pra colocar uma legenda pras cores, pensei em criar uma div html pra isso, mas achei que não usando highcharts não iria ser o certo</p>
+
+	</div>
+    </body> 
+</html>
